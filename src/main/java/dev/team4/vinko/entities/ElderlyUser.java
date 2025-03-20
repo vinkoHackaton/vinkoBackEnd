@@ -1,4 +1,4 @@
-package dev.team4.vinko.model;
+package dev.team4.vinko.entities;
 
 import java.util.List;
 
@@ -26,5 +26,4 @@ public class ElderlyUser {
     @OneToMany(mappedBy = "elderlyUser", cascade = CascadeType.ALL)
     private List<ContactRequest> contactRequests;
 
-    // Getters and Setters
 }
