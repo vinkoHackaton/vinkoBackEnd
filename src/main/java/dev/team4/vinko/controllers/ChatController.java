@@ -1,15 +1,19 @@
 package dev.team4.vinko.controllers;
 
+import java.time.LocalDateTime;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import dev.team4.vinko.dtos.ChatDTO;
 import dev.team4.vinko.entities.Chat;
 import dev.team4.vinko.entities.Companion;
 import dev.team4.vinko.entities.ElderlyUser;
-import dev.team4.vinko.dto.ChatDTO;
-import dev.team4.vinko.repository.ChatRepository;
-import dev.team4.vinko.repository.CompanionRepository;
-import dev.team4.vinko.repository.ElderlyUserRepository;
-import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
+import dev.team4.vinko.repositories.ChatRepository;
+import dev.team4.vinko.repositories.CompanionRepository;
+import dev.team4.vinko.repositories.ElderlyUserRepository;
 
 @RestController
 @RequestMapping("/api/chats")
