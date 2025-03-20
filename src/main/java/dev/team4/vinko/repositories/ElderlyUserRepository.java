@@ -1,4 +1,8 @@
 package dev.team4.vinko.repositories;
 
-public interface ElderlyUserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import dev.team4.vinko.entities.ElderlyUser;
+
+public interface ElderlyUserRepository extends JpaRepository<ElderlyUser, Long> {
 }
