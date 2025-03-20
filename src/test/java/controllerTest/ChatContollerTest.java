@@ -62,7 +62,7 @@ class ChatControllerTest {
         Companion companion = new Companion();
         companion.setId(companionId);
 
-        ChatDTO chatDTO = new ChatDTO(message, elderlyUserId, companionId);
+        ChatDTO chatDTO = new ChatDTO();
         Chat savedChat = new Chat();
         savedChat.setMessage(message);
         savedChat.setSentDate(sentDate);
@@ -108,7 +108,6 @@ class ChatControllerTest {
     void sendMessage_ElderlyUserNotFound() throws Exception {
         // Datos de prueba
         Long elderlyUserId = 1L;
-        Long companionId = 1L;
         String message = "Hello, how are you?";
 
         // Simulación de repositorio para usuario no encontrado

@@ -10,11 +10,9 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -39,8 +37,13 @@ class ElderlyUserControllerTest {
     @Test
     void getAllUsers() throws Exception {
         // Datos de prueba
+
         ElderlyUser user1 = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
         ElderlyUser user2 = new ElderlyUser(2L, "Jane Doe", "jane@example.com", "987654321");
+
+        ElderlyUser user1 = new ElderlyUser();
+        ElderlyUser user2 = new ElderlyUser();
+
         List<ElderlyUser> users = Arrays.asList(user1, user2);
 
         // Simulación del repositorio
@@ -65,7 +68,11 @@ class ElderlyUserControllerTest {
     @Test
     void createUser() throws Exception {
         // Datos de prueba
+
         ElderlyUser user = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
+
+        ElderlyUser user = new ElderlyUser();
+
 
         // Simulación del repositorio
         when(repository.save(any(ElderlyUser.class))).thenReturn(user);
@@ -87,7 +94,11 @@ class ElderlyUserControllerTest {
     @Test
     void getUserById() throws Exception {
         // Datos de prueba
+
         ElderlyUser user = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
+
+        ElderlyUser user = new ElderlyUser();
+
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(user));
@@ -120,8 +131,13 @@ class ElderlyUserControllerTest {
     @Test
     void updateUser() throws Exception {
         // Datos de prueba
+
         ElderlyUser existingUser = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
         ElderlyUser updatedUser = new ElderlyUser(1L, "John Updated", "john.updated@example.com", "987654321");
+
+        ElderlyUser existingUser = new ElderlyUser();
+        ElderlyUser updatedUser = new ElderlyUser();
+
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(existingUser));
