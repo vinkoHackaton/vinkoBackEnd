@@ -1,5 +1,4 @@
 package controllerTest;
-import dev.team4.vinko.controllers.ActivityController;
 import dev.team4.vinko.dtos.ActivityDTO;
 import dev.team4.vinko.entities.Activity;
 import dev.team4.vinko.repositories.ActivityRepository;
