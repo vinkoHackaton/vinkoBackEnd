@@ -2,6 +2,8 @@ package dev.team4.vinko.entities;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,7 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "companion_id")
+    @JsonBackReference
     private Companion companion;
 
 

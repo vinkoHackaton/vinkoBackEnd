@@ -1,5 +1,7 @@
 package dev.team4.vinko.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,10 +21,12 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "elderly_user_id")
+    @JsonBackReference
     private ElderlyUser elderlyUser;
 
     @ManyToOne
     @JoinColumn(name = "companion_id")
+    @JsonBackReference
     private Companion companion;
 
 
