@@ -2,10 +2,13 @@ package dev.team4.vinko.controllers;
 
 import java.time.LocalDateTime;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import dev.team4.vinko.dtos.ChatDTO;
 import dev.team4.vinko.entities.Chat;
@@ -30,13 +33,15 @@ public class ChatController {
     }
 
     @PostMapping
-    public Chat sendMessage(@RequestBody ChatDTO chatDTO) {
-        ElderlyUser elderlyUser = elderlyUserRepository.findById(chatDTO.getElderlyUserId()).orElse(null);
-        Companion companion = companionRepository.findById(chatDTO.getCompanionId()).orElse(null);
-
-        if (elderlyUser == null || companion == null) {
-            throw new RuntimeException("Elderly User or Companion not found");
+    public ResponseEntity<Chat> sendMessage(@RequestBody ChatDTO chatDTO) {
+        if (chatDTO.getMessage() == null || chatDTO.getMessage().trim().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Message cannot be empty");
         }
+
+        ElderlyUser elderlyUser = elderlyUserRepository.findById(chatDTO.getElderlyUserId())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Elderly User not found"));
+        Companion companion = companionRepository.findById(chatDTO.getCompanionId())
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Companion not found"));
 
         Chat chat = new Chat();
         chat.setMessage(chatDTO.getMessage());
@@ -44,6 +49,7 @@ public class ChatController {
         chat.setElderlyUser(elderlyUser);
         chat.setCompanion(companion);
 
-        return chatRepository.save(chat);
+        Chat savedChat = chatRepository.save(chat);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedChat);
     }
 }
