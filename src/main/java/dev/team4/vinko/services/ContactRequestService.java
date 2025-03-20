@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import dev.team4.vinko.model.ContactRequest;
-import dev.team4.vinko.repository.ContactRequestRepository;
+import dev.team4.vinko.entities.ContactRequest;
+import dev.team4.vinko.repositories.ContactRequestRepository;
 
 @Service
 public class ContactRequestService {
