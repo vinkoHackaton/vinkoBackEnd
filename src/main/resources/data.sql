@@ -14,16 +14,16 @@ INSERT INTO elderly_user ( name, email, phone) VALUES
 
 -- Insertar datos de prueba para Companion
 INSERT INTO companion ( name, age, email, description, photo_url, hourly_rate, rating) VALUES
-('Alicia Gómez', 30, 'juanperez@example.com', 'Amable y con experiencia.', 'https://example.com/photo1.jpg', 20.0, 4.8),
-('Carlos Ruiz', 40, 'mariagarcia@example.com', 'Le encantan las actividades al aire libre.', 'https://example.com/photo2.jpg', 18.0, 4.7),
-('Luis Torres', 35, 'robertof@example.com', 'Experto en juegos de mesa.', 'https://example.com/photo3.jpg', 22.0, 4.9),
-('Diana Herrera', 32, 'analopez@example.com', 'Disfruta de los museos y la historia.', 'https://example.com/photo4.jpg', 19.5, 4.6),
-('Esteban Castro', 45, 'miguelr@example.com', 'Gran contador de historias.', 'https://example.com/photo5.jpg', 21.0, 4.5),
-('Fernanda Ríos', 29, 'sofias@example.com', 'Apasionada por la música.', 'https://example.com/photo6.jpg', 20.5, 4.9),
-('Gabriel Vargas', 50, 'davidm@example.com', 'Le encanta cocinar en compañía.', 'https://example.com/photo7.jpg', 23.0, 4.7),
-('Helena Castillo', 28, 'lauraj@example.com', 'Creativa y artística.', 'https://example.com/photo8.jpg', 18.5, 4.6),
-('Ignacio Peña', 37, 'javierd@example.com', 'Exprofesor, le encantan las discusiones.', 'https://example.com/photo9.jpg', 19.0, 4.8),
-('Julia Morales', 34, 'elenat@example.com', 'Activa y enérgica.', 'https://example.com/photo10.jpg', 22.5, 4.7);
+('Alicia Gómez', 30, 'juanperez@example.com', 'Amable y con experiencia.', 'https://plus.unsplash.com/premium_photo-1689568158814-3b8e9c1a9618?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uYXxlbnwwfHwwfHx8MA%3D%3D', 20.0, 4.8),
+('Carlos Ruiz', 40, 'mariagarcia@example.com', 'Le encantan las actividades al aire libre.', 'https://media.istockphoto.com/id/1389348844/es/foto/foto-de-estudio-de-una-hermosa-joven-sonriendo-mientras-est%C3%A1-de-pie-sobre-un-fondo-gris.jpg?s=612x612&w=0&k=20&c=kUufmNoTnDcRbyeHhU1wRiip-fNjTWP9owjHf75frFQ=', 18.0, 4.7),
+('Luis Torres', 35, 'robertof@example.com', 'Experto en juegos de mesa.', 'https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVyc29uYXxlbnwwfHwwfHx8MA%3D%3D', 22.0, 4.9),
+('Diana Herrera', 32, 'analopez@example.com', 'Disfruta de los museos y la historia.', 'https://img.freepik.com/foto-gratis/estilo-vida-emociones-gente-concepto-casual-confiado-agradable-sonriente-mujer-asiatica-brazos-cruzados-pecho-seguro-listo-ayudar-escuchando-companeros-trabajo-participando-conversacion_1258-59335.jpg', 19.5, 4.6),
+('Esteban Castro', 45, 'miguelr@example.com', 'Gran contador de historias.', 'https://img.freepik.com/foto-gratis/joven-barbudo-camisa-rayas_273609-5677.jpg', 21.0, 4.5),
+('Fernanda Ríos', 29, 'sofias@example.com', 'Apasionada por la música.', 'https://static.cegos.es/content/uploads/2023/03/01165224/GettyImages-1300321639.jpg', 20.5, 4.9),
+('Gabriel Vargas', 50, 'davidm@example.com', 'Le encanta cocinar en compañía.', 'https://media.istockphoto.com/id/494711330/es/foto/hombre-joven-latina-en-un-estudio.jpg?s=612x612&w=0&k=20&c=Ye9u097upgUhpcVttIB5i39Dj8XOPheoL4HB6SHC9iA=', 23.0, 4.7),
+('Helena Castillo', 28, 'lauraj@example.com', 'Creativa y artística.', 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 18.5, 4.6),
+('Ignacio Peña', 37, 'javierd@example.com', 'Exprofesor, le encantan las discusiones.', 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29uYXxlbnwwfHwwfHx8MA%3D%3D', 19.0, 4.8),
+('Julia Morales', 34, 'elenat@example.com', 'Activa y enérgica.', 'https://media.istockphoto.com/id/1398811731/es/foto/rostro-de-hermosa-mujer-de-raza-mixta-sonriendo-con-dientes-blancos-retrato-de-la-cara-de-una.jpg?s=612x612&w=0&k=20&c=TCCrlNl_wYzjGtxb8ZTs5_Vz9DQU3nBuqNKWAPuGS28=', 22.5, 4.7);
 
 -- Insertar datos de prueba para Activity
 INSERT INTO activity ( name, description) VALUES
