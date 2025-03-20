@@ -1,5 +1,8 @@
 package dev.team4.vinko.repositories;
 
-public interface CompanionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import dev.team4.vinko.entities.Companion;
+
+public interface CompanionRepository extends JpaRepository<Companion, Long> {
 }
