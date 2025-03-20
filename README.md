@@ -42,8 +42,6 @@ Copy
 mvn clean install
 Estructura del Proyecto
 El proyecto está organizado en los siguientes paquetes:
-
-Copy
 src/main/java/com/example/demo/
 ├── config/                # Configuraciones de la aplicación
 ├── controller/            # Controladores (REST API)
@@ -52,6 +50,7 @@ src/main/java/com/example/demo/
 ├── model/                 # Entidades (Modelos de datos)
 ├── dto/                   # Objetos de Transferencia de Datos (DTOs)
 └── exception/             # Manejo de excepciones personalizadas
+
 Endpoints de la API
 Actividades (/api/activities)
 GET /api/activities - Obtener todas las actividades.
