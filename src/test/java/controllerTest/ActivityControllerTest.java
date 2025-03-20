@@ -1,6 +1,7 @@
 package controllerTest;
-
 import dev.team4.vinko.controllers.ActivityController;
+import dev.team4.vinko.dtos.ActivityDTO;
+import dev.team4.vinko.entities.Activity;
 import dev.team4.vinko.repositories.ActivityRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,10 +11,8 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import java.util.Arrays;
 import java.util.Optional;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -99,6 +98,7 @@ class ActivityControllerTest {
     @Test
     void updateActivity() throws Exception {
         Activity existingActivity = new Activity();
+        ActivityDTO updatedDTO = new ActivityDTO(1L, "Updated Activity", "Updated Description");
         when(repository.findById(1L)).thenReturn(Optional.of(existingActivity));
         when(repository.save(any(Activity.class))).thenReturn(existingActivity);
 

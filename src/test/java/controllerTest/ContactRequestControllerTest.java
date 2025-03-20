@@ -10,11 +10,9 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -38,9 +36,13 @@ class ContactRequestControllerTest {
 
     @Test
     void getAllRequests() throws Exception {
-        // Datos de prueba
+        
+        ContactRequest request1 = new ContactRequest(1L, "John Doe", "john@example.com", "Hello, I need help.");
+        ContactRequest request2 = new ContactRequest(2L, "Jane Doe", "jane@example.com", "Can you assist me?");
+
         ContactRequest request1 = new ContactRequest();
         ContactRequest request2 = new ContactRequest();
+
         List<ContactRequest> requests = Arrays.asList(request1, request2);
 
         // Simulación del repositorio
@@ -65,7 +67,11 @@ class ContactRequestControllerTest {
     @Test
     void createRequest() throws Exception {
         // Datos de prueba
+
+        ContactRequest request = new ContactRequest(1L, "John Doe", "john@example.com", "Hello, I need help.");
+
         ContactRequest request = new ContactRequest();
+
 
         // Simulación del repositorio
         when(repository.save(any(ContactRequest.class))).thenReturn(request);
@@ -87,7 +93,11 @@ class ContactRequestControllerTest {
     @Test
     void getRequestById() throws Exception {
         // Datos de prueba
+
+        ContactRequest request = new ContactRequest(1L, "John Doe", "john@example.com", "Hello, I need help.");
+
         ContactRequest request = new ContactRequest();
+
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(request));
