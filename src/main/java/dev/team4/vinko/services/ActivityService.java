@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import dev.team4.vinko.model.Activity;
-import dev.team4.vinko.repository.ActivityRepository;
+import dev.team4.vinko.entities.Activity;
+import dev.team4.vinko.repositories.ActivityRepository;
 
 @Service
 public class ActivityService {

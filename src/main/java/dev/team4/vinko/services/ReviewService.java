@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import dev.team4.vinko.model.Review;
-import dev.team4.vinko.repository.ReviewRepository;
+import dev.team4.vinko.entities.Review;
+import dev.team4.vinko.repositories.ReviewRepository;
 
 @Service
 public class ReviewService {

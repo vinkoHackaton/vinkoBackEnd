@@ -1,7 +1,8 @@
-package dev.team4.vinko.repository;
+package dev.team4.vinko.repositories;
 
-import dev.team4.vinko.model.Chat;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import dev.team4.vinko.entities.Chat;
 
 public interface ChatRepository extends JpaRepository<Chat, Long> {
 }
