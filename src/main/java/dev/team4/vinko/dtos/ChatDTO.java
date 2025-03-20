@@ -1,4 +1,4 @@
-package dev.team4.vinko.dto;
+package dev.team4.vinko.dtos;
 
 import lombok.Data;
 

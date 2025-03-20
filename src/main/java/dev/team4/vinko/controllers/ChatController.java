@@ -1,8 +1,8 @@
-package dev.team4.vinko.controller;
+package dev.team4.vinko.controllers;
 
-import dev.team4.vinko.model.Chat;
-import dev.team4.vinko.model.Companion;
-import dev.team4.vinko.model.ElderlyUser;
+import dev.team4.vinko.entities.Chat;
+import dev.team4.vinko.entities.Companion;
+import dev.team4.vinko.entities.ElderlyUser;
 import dev.team4.vinko.dto.ChatDTO;
 import dev.team4.vinko.repository.ChatRepository;
 import dev.team4.vinko.repository.CompanionRepository;

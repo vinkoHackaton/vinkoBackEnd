@@ -1,6 +1,7 @@
-package dev.team4.vinko.model;
+package dev.team4.vinko.entities;
 
 import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
