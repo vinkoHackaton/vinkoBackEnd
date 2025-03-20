@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import dev.team4.vinko.entities.Companion;
 import dev.team4.vinko.repositories.CompanionRepository;
 
+import dev.team4.vinko.entities.Companion;
+import dev.team4.vinko.repositories.CompanionRepository;
+
 @Service
 public class CompanionService {
     private final CompanionRepository repository;

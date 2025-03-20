@@ -77,5 +77,5 @@ INSERT INTO contact_request ( elderly_user_id, companion_id, message, requested_
 (9, 9, 'Quiero aprender a pintar.', '2025-03-19 17:00:00'),
 (10, 10, '¿Podemos ir al teatro?', '2025-03-19 18:00:00');
 
-INSERT INTO app_user (username, password, role) VALUES ('admin', 'admin123', 'ROLE_ADMIN');
-INSERT INTO app_user (username, password, role) VALUES ('user', 'user123', 'ROLE_USER');
+-- INSERT INTO app_user (username, password, role) VALUES ('admin', 'admin123', 'ROLE_ADMIN');
+-- INSERT INTO app_user (username, password, role) VALUES ('user', 'user123', 'ROLE_USER');
