@@ -1,4 +1,6 @@
 package controllerTest;
+
+import dev.team4.vinko.controllers.ActivityController;
 import dev.team4.vinko.dtos.ActivityDTO;
 import dev.team4.vinko.entities.Activity;
 import dev.team4.vinko.repositories.ActivityRepository;
@@ -37,8 +39,8 @@ class ActivityControllerTest {
 
     @Test
     void getAllActivities() throws Exception {
-        Activity activity1 = new Activity(1L, "Activity 1", "Description 1");
-        Activity activity2 = new Activity(2L, "Activity 2", "Description 2");
+        Activity activity1 = new Activity();
+        Activity activity2 = new Activity();
 
         when(repository.findAll()).thenReturn(Arrays.asList(activity1, activity2));
 
@@ -56,7 +58,7 @@ class ActivityControllerTest {
 
     @Test
     void createActivity() throws Exception {
-        Activity activity = new Activity(1L, "New Activity", "New Description");
+        Activity activity = new Activity();
 
         when(repository.save(any(Activity.class))).thenReturn(activity);
 
@@ -73,7 +75,7 @@ class ActivityControllerTest {
 
     @Test
     void getActivityById() throws Exception {
-        Activity activity = new Activity(1L, "Activity 1", "Description 1");
+        Activity activity = new Activity();
 
         when(repository.findById(1L)).thenReturn(Optional.of(activity));
 
@@ -98,7 +100,7 @@ class ActivityControllerTest {
 
     @Test
     void updateActivity() throws Exception {
-        Activity existingActivity = new Activity(1L, "Old Activity", "Old Description");
+        Activity existingActivity = new Activity();
         ActivityDTO updatedDTO = new ActivityDTO(1L, "Updated Activity", "Updated Description");
 
         when(repository.findById(1L)).thenReturn(Optional.of(existingActivity));
