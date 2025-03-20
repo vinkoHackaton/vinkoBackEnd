@@ -1,8 +1,6 @@
 package controllerTest;
 
 import dev.team4.vinko.controllers.ActivityController;
-import dev.team4.vinko.dtos.ActivityDTO;
-import dev.team4.vinko.entities.Activity;
 import dev.team4.vinko.repositories.ActivityRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -101,8 +99,6 @@ class ActivityControllerTest {
     @Test
     void updateActivity() throws Exception {
         Activity existingActivity = new Activity();
-        ActivityDTO updatedDTO = new ActivityDTO(1L, "Updated Activity", "Updated Description");
-
         when(repository.findById(1L)).thenReturn(Optional.of(existingActivity));
         when(repository.save(any(Activity.class))).thenReturn(existingActivity);
 
