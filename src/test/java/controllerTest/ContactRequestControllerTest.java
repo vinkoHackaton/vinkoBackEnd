@@ -37,8 +37,8 @@ class ContactRequestControllerTest {
     @Test
     void getAllRequests() throws Exception {
         
-        ContactRequest request1 = new ContactRequest(1L, "John Doe", "john@example.com", "Hello, I need help.");
-        ContactRequest request2 = new ContactRequest(2L, "Jane Doe", "jane@example.com", "Can you assist me?");
+        ContactRequest request1 = new ContactRequest();
+        ContactRequest request2 = new ContactRequest();
 
         ContactRequest request1 = new ContactRequest();
         ContactRequest request2 = new ContactRequest();
@@ -68,7 +68,7 @@ class ContactRequestControllerTest {
     void createRequest() throws Exception {
         // Datos de prueba
 
-        ContactRequest request = new ContactRequest(1L, "John Doe", "john@example.com", "Hello, I need help.");
+        ContactRequest request = new ContactRequest();
 
         ContactRequest request = new ContactRequest();
 
@@ -94,7 +94,7 @@ class ContactRequestControllerTest {
     void getRequestById() throws Exception {
         // Datos de prueba
 
-        ContactRequest request = new ContactRequest(1L, "John Doe", "john@example.com", "Hello, I need help.");
+        ContactRequest request = new ContactRequest();
 
         ContactRequest request = new ContactRequest();
 
