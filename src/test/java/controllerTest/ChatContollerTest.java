@@ -12,15 +12,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.time.LocalDateTime;
 import java.util.Optional;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -62,7 +58,6 @@ class ChatControllerTest {
         Companion companion = new Companion();
         companion.setId(companionId);
 
-        ChatDTO chatDTO = new ChatDTO(message, elderlyUserId, companionId);
         Chat savedChat = new Chat();
         savedChat.setMessage(message);
         savedChat.setSentDate(sentDate);
@@ -108,9 +103,6 @@ class ChatControllerTest {
     void sendMessage_ElderlyUserNotFound() throws Exception {
         // Datos de prueba
         Long elderlyUserId = 1L;
-        Long companionId = 1L;
-        String message = "Hello, how are you?";
-
         // Simulación de repositorio para usuario no encontrado
         when(elderlyUserRepository.findById(elderlyUserId)).thenReturn(Optional.empty());
 
@@ -132,8 +124,6 @@ class ChatControllerTest {
         // Datos de prueba
         Long elderlyUserId = 1L;
         Long companionId = 1L;
-        String message = "Hello, how are you?";
-
         ElderlyUser elderlyUser = new ElderlyUser();
         elderlyUser.setId(elderlyUserId);
 
