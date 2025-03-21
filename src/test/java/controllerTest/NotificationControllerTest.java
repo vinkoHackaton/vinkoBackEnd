@@ -39,8 +39,8 @@ class NotificationControllerTest {
     @Test
     void getAllNotifications() throws Exception {
         // Datos de prueba
-        Notification notification1 = new Notification(1L, "Notification 1", "Content 1");
-        Notification notification2 = new Notification(2L, "Notification 2", "Content 2");
+        Notification notification1 = new Notification();
+        Notification notification2 = new Notification();
         List<Notification> notifications = Arrays.asList(notification1, notification2);
 
         // Simulación del repositorio
@@ -63,7 +63,7 @@ class NotificationControllerTest {
     @Test
     void createNotification() throws Exception {
         // Datos de prueba
-        Notification notification = new Notification(1L, "New Notification", "New Content");
+        Notification notification = new Notification();
 
         // Simulación del repositorio
         when(repository.save(any(Notification.class))).thenReturn(notification);
@@ -84,7 +84,7 @@ class NotificationControllerTest {
     @Test
     void getNotificationById() throws Exception {
         // Datos de prueba
-        Notification notification = new Notification(1L, "Notification 1", "Content 1");
+        Notification notification = new Notification();
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(notification));
