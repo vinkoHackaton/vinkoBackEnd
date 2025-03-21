@@ -28,7 +28,7 @@ public class ContactRequest {
 
     @ManyToOne
     @JoinColumn(name = "companion_id")
-    @JsonBackReference
+    @JsonBackReference("companion-contactrequest")
     private Companion companion;
 
   

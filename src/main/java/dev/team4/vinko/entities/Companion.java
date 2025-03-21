@@ -30,15 +30,15 @@ public class Companion {
     private Double rating;
 
     @OneToMany(mappedBy = "companion", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("companion-review")
     private List<Review> reviews;
 
     @OneToMany(mappedBy = "companion", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("companion-notification")
     private List<Notification> notifications;
 
     @OneToMany(mappedBy = "companion", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("companion-contactrequest")
     private List<ContactRequest> contactRequests;
 
     @ManyToMany

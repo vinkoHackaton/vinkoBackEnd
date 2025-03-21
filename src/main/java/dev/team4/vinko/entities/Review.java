@@ -26,7 +26,7 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "companion_id")
-    @JsonBackReference
+    @JsonBackReference("companion-review")
     private Companion companion;
 
 

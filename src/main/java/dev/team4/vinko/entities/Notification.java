@@ -23,7 +23,7 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "companion_id")
-    @JsonBackReference
+    @JsonBackReference("companion-notification")
     private Companion companion;
 
 
