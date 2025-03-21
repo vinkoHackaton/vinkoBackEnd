@@ -2,6 +2,8 @@ package dev.team4.vinko.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,9 +23,11 @@ public class ElderlyUser {
     private String phone;
 
     @OneToMany(mappedBy = "elderlyUser", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Review> reviews;
 
     @OneToMany(mappedBy = "elderlyUser", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<ContactRequest> contactRequests;
 
 }

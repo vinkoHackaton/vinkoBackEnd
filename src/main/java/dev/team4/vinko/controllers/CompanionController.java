@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+
 
 import dev.team4.vinko.dtos.CompanionDto;
 import dev.team4.vinko.entities.Companion;
@@ -28,7 +30,7 @@ public class CompanionController {
         return repository.findAll();
     }
 
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public Companion createCompanion(@RequestBody Companion companion) {
         return repository.save(companion);
     }

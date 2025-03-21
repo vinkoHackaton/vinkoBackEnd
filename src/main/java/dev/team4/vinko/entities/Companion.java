@@ -2,6 +2,8 @@ package dev.team4.vinko.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,12 +30,15 @@ public class Companion {
     private Double rating;
 
     @OneToMany(mappedBy = "companion", cascade = CascadeType.ALL)
+    @JsonManagedReference("companion-review")
     private List<Review> reviews;
 
     @OneToMany(mappedBy = "companion", cascade = CascadeType.ALL)
+    @JsonManagedReference("companion-notification")
     private List<Notification> notifications;
 
     @OneToMany(mappedBy = "companion", cascade = CascadeType.ALL)
+    @JsonManagedReference("companion-contactrequest")
     private List<ContactRequest> contactRequests;
 
     @ManyToMany
