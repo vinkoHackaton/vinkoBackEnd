@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+
 import dev.team4.vinko.entities.Companion;
 import dev.team4.vinko.repositories.CompanionRepository;
+
+
 
 @Service
 public class CompanionService {
