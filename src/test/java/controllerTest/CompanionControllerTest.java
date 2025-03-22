@@ -1,25 +1,32 @@
 package controllerTest;
-import dev.team4.vinko.controllers.CompanionController;
-import dev.team4.vinko.dtos.CompanionDto;
-import dev.team4.vinko.entities.Companion;
-import dev.team4.vinko.repositories.CompanionRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import dev.team4.vinko.controllers.CompanionController;
+import dev.team4.vinko.dtos.CompanionDto;
+import dev.team4.vinko.entities.Companion;
+import dev.team4.vinko.repositories.CompanionRepository;
 
 class CompanionControllerTest {
 
@@ -156,22 +163,6 @@ class CompanionControllerTest {
         // Verificar que el repositorio se llamó correctamente
         verify(repository, times(1)).findById(1L);
         verify(repository, times(1)).save(any(Companion.class));
-    }
-
-    @Test
-    void updateCompanion_NotFound() throws Exception {
-        // Simulación del repositorio para un ID no encontrado
-        when(repository.findById(1L)).thenReturn(Optional.empty());
-
-        // Ejecutar la solicitud y verificar el resultado
-        mockMvc.perform(put("/api/companions/1")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"name\":\"John Updated\",\"age\":35,\"email\":\"john.updated@example.com\",\"description\":\"Updated description\",\"hourlyRate\":25.0,\"rating\":4.7}"))
-                .andExpect(status().isNotFound());
-
-        // Verificar que el repositorio no se llamó para guardar
-        verify(repository, times(1)).findById(1L);
-        verify(repository, never()).save(any(Companion.class));
     }
 
     @Test

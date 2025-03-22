@@ -1,22 +1,32 @@
 package controllerTest;
-import dev.team4.vinko.controllers.ElderlyUserController;
-import dev.team4.vinko.entities.ElderlyUser;
-import dev.team4.vinko.repositories.ElderlyUserRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import dev.team4.vinko.controllers.ElderlyUserController;
+import dev.team4.vinko.entities.ElderlyUser;
+import dev.team4.vinko.repositories.ElderlyUserRepository;
 
 class ElderlyUserControllerTest {
 
@@ -41,8 +51,8 @@ class ElderlyUserControllerTest {
         ElderlyUser user1 = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
         ElderlyUser user2 = new ElderlyUser(2L, "Jane Doe", "jane@example.com", "987654321");
 
-        ElderlyUser user1 = new ElderlyUser();
-        ElderlyUser user2 = new ElderlyUser();
+        // ElderlyUser user1 = new ElderlyUser();
+        // ElderlyUser user2 = new ElderlyUser();
 
         List<ElderlyUser> users = Arrays.asList(user1, user2);
 
@@ -71,7 +81,7 @@ class ElderlyUserControllerTest {
 
         ElderlyUser user = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
 
-        ElderlyUser user = new ElderlyUser();
+        // ElderlyUser user = new ElderlyUser();
 
 
         // Simulación del repositorio
@@ -96,9 +106,6 @@ class ElderlyUserControllerTest {
         // Datos de prueba
 
         ElderlyUser user = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
-
-        ElderlyUser user = new ElderlyUser();
-
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(user));
@@ -134,10 +141,6 @@ class ElderlyUserControllerTest {
 
         ElderlyUser existingUser = new ElderlyUser(1L, "John Doe", "john@example.com", "123456789");
         ElderlyUser updatedUser = new ElderlyUser(1L, "John Updated", "john.updated@example.com", "987654321");
-
-        ElderlyUser existingUser = new ElderlyUser();
-        ElderlyUser updatedUser = new ElderlyUser();
-
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(existingUser));
