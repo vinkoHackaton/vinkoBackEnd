@@ -30,4 +30,16 @@ public class ElderlyUser {
     @JsonManagedReference
     private List<ContactRequest> contactRequests;
 
+    public ElderlyUser(Long id, String name, String email, String phone) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
+
+
+    public ElderlyUser() {
+    }
+
 }

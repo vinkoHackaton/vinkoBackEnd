@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-
 import dev.team4.vinko.entities.ElderlyUser;
 import dev.team4.vinko.repositories.ElderlyUserRepository;
 

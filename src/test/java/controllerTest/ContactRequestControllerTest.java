@@ -1,22 +1,30 @@
 package controllerTest;
-import dev.team4.vinko.controllers.ContactRequestController;
-import dev.team4.vinko.entities.ContactRequest;
-import dev.team4.vinko.repositories.ContactRequestRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import dev.team4.vinko.controllers.ContactRequestController;
+import dev.team4.vinko.entities.ContactRequest;
+import dev.team4.vinko.repositories.ContactRequestRepository;
 
 class ContactRequestControllerTest {
 
@@ -37,9 +45,6 @@ class ContactRequestControllerTest {
     @Test
     void getAllRequests() throws Exception {
         
-        ContactRequest request1 = new ContactRequest();
-        ContactRequest request2 = new ContactRequest();
-
         ContactRequest request1 = new ContactRequest();
         ContactRequest request2 = new ContactRequest();
 
@@ -70,9 +75,6 @@ class ContactRequestControllerTest {
 
         ContactRequest request = new ContactRequest();
 
-        ContactRequest request = new ContactRequest();
-
-
         // Simulación del repositorio
         when(repository.save(any(ContactRequest.class))).thenReturn(request);
 
@@ -95,9 +97,6 @@ class ContactRequestControllerTest {
         // Datos de prueba
 
         ContactRequest request = new ContactRequest();
-
-        ContactRequest request = new ContactRequest();
-
 
         // Simulación del repositorio
         when(repository.findById(1L)).thenReturn(Optional.of(request));
